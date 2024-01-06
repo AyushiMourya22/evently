@@ -9,11 +9,11 @@ export const connectToDb= async ()=>{
     if(!MONGODB_URL) throw new Error("MONGODB URL is missing")
 
     cached.promise=cached.promise || mongoose.connect(MONGODB_URL,{
-        dbName:"evently",
+        dbName:"Evently",
         bufferCommands:false
     })
 
     cached.conn=await cached.promise
-
+    console.log("Connected to DB")
     return cached.conn
 }
